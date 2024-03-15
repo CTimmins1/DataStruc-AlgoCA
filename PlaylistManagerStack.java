@@ -11,13 +11,13 @@ public interface PlaylistManagerStack {
     //this will push() a song onto the top of the stack
    void pushSong(String song, String genre);
    //this will pop() the top song from stack, removing most recent song
-   String popSong(String song);
+   String popSong();
    //this will display the top song on the top of stack
-   String peekSong(String song);
+   String peekSong();
    //this will check if the stack isEmpty().
-   boolean isEmpty(String song);
+   boolean isEmpty();
    //will return the number of songs in the stack
-   int size(String song);
+   int size();
    //searching the stack
    boolean searchSong(String song);
    //to displayPlaylist()

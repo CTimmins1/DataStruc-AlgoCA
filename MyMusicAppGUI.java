@@ -1,8 +1,10 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author CamaraAdmin
@@ -55,6 +57,9 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
         downBtn = new javax.swing.JButton();
         deleteSearchBtn = new javax.swing.JButton();
         repeatBtn = new javax.swing.JButton();
+        clearPlaylist = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        saveBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,19 +78,19 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
         getContentPane().add(genreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
         getContentPane().add(genretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 110, -1));
 
-        addBtn.setText("Add Song");
+        addBtn.setText("Add to liked Songs");
         addBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 92, -1));
+        getContentPane().add(addBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 130, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 300, 182));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 152, 300, 150));
 
         delBtn.setText("Delete Song");
         delBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +98,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 delBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
+        getContentPane().add(delBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 130, -1));
 
         shufBtn.setText("Shuffle List");
         shufBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +106,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 shufBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(shufBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 92, -1));
+        getContentPane().add(shufBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 130, -1));
 
         eraseBtn.setText("Erase List");
         eraseBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +114,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 eraseBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(eraseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 92, -1));
+        getContentPane().add(eraseBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 130, -1));
 
         listABtn.setText("Add to Rap Playlist");
         listABtn.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +122,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 listABtnActionPerformed(evt);
             }
         });
-        getContentPane().add(listABtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 134, -1));
+        getContentPane().add(listABtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 134, -1));
 
         listBBtn.setText("Add to Pop Playlist");
         listBBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +130,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 listBBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(listBBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 130, -1));
+        getContentPane().add(listBBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 130, -1));
 
         playlistTxt.setColumns(20);
         playlistTxt.setRows(5);
@@ -139,7 +144,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 displayPopBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(displayPopBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 130, -1));
+        getContentPane().add(displayPopBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 130, -1));
 
         displayRapBtn.setText("Display Rap Playlist");
         displayRapBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +152,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 displayRapBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(displayRapBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 134, -1));
+        getContentPane().add(displayRapBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 134, -1));
 
         eraseRap.setText("Clear Rap");
         eraseRap.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +160,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 eraseRapActionPerformed(evt);
             }
         });
-        getContentPane().add(eraseRap, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, -1, -1));
+        getContentPane().add(eraseRap, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, -1, -1));
 
         erasePop.setText("Clear Pop");
         erasePop.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +168,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
                 erasePopActionPerformed(evt);
             }
         });
-        getContentPane().add(erasePop, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        getContentPane().add(erasePop, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
         welcomeLbl.setBackground(new java.awt.Color(0, 0, 102));
         welcomeLbl.setForeground(new java.awt.Color(0, 0, 0));
@@ -173,22 +178,68 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
         backgroundimg.setIcon(new javax.swing.ImageIcon("C:\\Users\\CamaraAdmin\\Desktop\\backgroung.jpg")); // NOI18N
         backgroundimg.setText("jLabel2");
         getContentPane().add(backgroundimg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 210, 110));
-        getContentPane().add(searchTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 150, -1));
+
+        searchTxt.setText("Search by Name...");
+        getContentPane().add(searchTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 150, -1));
 
         searchBtn.setText("Search");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
 
         upBtn.setText("Move Up");
+        upBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                upBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(upBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 90, -1));
 
         downBtn.setText("Move Down");
+        downBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                downBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(downBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
 
         deleteSearchBtn.setText("Delete");
+        deleteSearchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteSearchBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(deleteSearchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
 
         repeatBtn.setText("Repeat Playlist");
-        getContentPane().add(repeatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, -1));
+        repeatBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                repeatBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(repeatBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, -1));
+
+        clearPlaylist.setText("Clear Playlists");
+        clearPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearPlaylistActionPerformed(evt);
+            }
+        });
+        getContentPane().add(clearPlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 130, -1));
+
+        jLabel1.setText("Liked Songs:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 120, -1));
+
+        saveBtn.setText("Save Playlist");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 100, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -220,12 +271,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
     private void updatePlaylist() {
         //clears the text that is there if any.More of quality touch.
         playlistTxt.setText("");
-        //appends each of the songs in the linkedlist to the playlist text area below the buttons i have set
-        for (int i = 0; i < linkedList.getSongList().size(); i++) {
-        String song = linkedList.getSongList().get(i);
-        String genre = linkedList.getGenreList().get(i);
-        playlistTxt.append("Song: " + song + ", Genre: " + genre + "\n");
-    }
+        playlistTxt.append(linkedList.getListAsString());
     }//GEN-LAST:event_addBtnActionPerformed
 
     private void shufBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shufBtnActionPerformed
@@ -244,49 +290,142 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String song = songtxt.getText();
         String genre = genretxt.getText();
-        linkedList.addPlaylist(song, genre);
+        linkedList.addSong(song, genre);
         updatePlaylist();
     }//GEN-LAST:event_listBBtnActionPerformed
 
     private void erasePopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_erasePopActionPerformed
-        // TODO add your handling code here:
-        linkedList.eraseAllSongs();
-        updatePlaylist();
+        jTextArea1.setText("");
+        linkedList.clearPlaylist("pop");
+        updateSongList();
     }//GEN-LAST:event_erasePopActionPerformed
 
     private void listABtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listABtnActionPerformed
         // TODO add your handling code here:
-        // Add the latest song to the Rap playlist
+        //add the latest song to the Rap playlist
         String song = songtxt.getText();
         String genre = genretxt.getText();
-        linkedList.addPlaylist(song, genre);
+        linkedList.addSong(song, genre);
         updatePlaylist();
 
     }//GEN-LAST:event_listABtnActionPerformed
 
     private void displayPopBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayPopBtnActionPerformed
-      // TODO add your handling code here:
-       //first i have to celar the playlist text area by setting the text to ""
-       playlistTxt.setText("");
-       //now to display the songs with genre "pop" from the playlist
-       for(String song : linkedList.getPopList()){
-           playlistTxt.append("Song: "+song+ ", Genre: Pop\n");
-       }
+        // TODO add your handling code here:
+        //first i have to celar the playlist text area by setting the text to ""
+        playlistTxt.setText("");
+        //now to display the songs with genre "pop" from the playlist
+        for (String song : linkedList.getPopList()) {
+            playlistTxt.append("Song: " + song + ", Genre: Pop\n");
+        }
     }//GEN-LAST:event_displayPopBtnActionPerformed
 
     private void displayRapBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayRapBtnActionPerformed
         // TODO add your handling code here:
         playlistTxt.setText(" ");
-        for (String song : linkedList.getRapList()){
-            playlistTxt.append("Song: "+song + ", Genre: Rap\n");
+        for (String song : linkedList.getRapList()) {
+            playlistTxt.append("Song: " + song + ", Genre: Rap\n");
         }
     }//GEN-LAST:event_displayRapBtnActionPerformed
 
     private void eraseRapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseRapActionPerformed
-        // TODO add your handling code here:
-         linkedList.eraseAllSongs();
-        updatePlaylist();
+        jTextArea1.setText("");
+        linkedList.clearPlaylist("rap");
+        updateSongList();
     }//GEN-LAST:event_eraseRapActionPerformed
+
+    private void repeatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repeatBtnActionPerformed
+        // TODO add your handling code here:
+        // if(genre.euqals("pop")){
+        //to repeat the pop playlist
+        //   for(String song:popList){
+        
+       //clear area
+       playlistTxt.setText("");
+       //display the songs from their arrays
+         String[] popPlaylist = linkedList.getPlaylists()[0];
+        String[] rapPlaylist = linkedList.getPlaylists()[1];
+        //displays the pop playlist
+    playlistTxt.append("Pop Playlist:\n");
+    for (String song : popPlaylist) {
+        playlistTxt.append(song + "\n");
+    }
+//displays the rap playlist
+    playlistTxt.append("\nRap Playlist:\n");
+    for (String song : rapPlaylist) {
+        playlistTxt.append(song + "\n");
+    }
+        
+    }//GEN-LAST:event_repeatBtnActionPerformed
+
+    private void clearPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearPlaylistActionPerformed
+        // TODO add your handling code here:
+        //clear the pop playlist
+        linkedList.clearPlaylistStack();
+        updatePlaylist();
+    }//GEN-LAST:event_clearPlaylistActionPerformed
+    private String searchSongs(String searchText) {
+        StringBuilder searchResult = new StringBuilder();
+
+        for (String song : linkedList.getAllSongs()) {
+            if (song.toLowerCase().contains(searchText)) { // Check if the song contains the search text
+                searchResult.append(song).append("\n");
+            }
+        }
+        return searchResult.toString();
+
+    }
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        String searchText = searchTxt.getText().toLowerCase();
+        String searchResult = searchSongs(searchText);
+        playlistTxt.setText(searchResult);
+
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void deleteSearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteSearchBtnActionPerformed
+        // Get the name of the song to delete from a text field or other component
+        String songToDelete = searchTxt.getText(); //gets text from where user can enter song
+        //removes the specified song from the stack
+        String deletedSong = linkedList.popSong(songToDelete);
+
+        //updates the song list display
+        updateSongList();
+        updatePlaylist();
+
+        //displays a message to indicate which song was deleted
+        JOptionPane.showMessageDialog(null, "Deleted song: " + deletedSong);
+
+    }//GEN-LAST:event_deleteSearchBtnActionPerformed
+
+    private void upBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upBtnActionPerformed
+        // TODO add your handling code here:
+        linkedList.moveUp("rap");
+        linkedList.moveUp("pop");
+        updatePlaylist();
+
+    }//GEN-LAST:event_upBtnActionPerformed
+
+    private void downBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downBtnActionPerformed
+        // TODO add your handling code here:
+        linkedList.moveDown("rap");
+        linkedList.moveDown("pop");
+        updatePlaylist();
+    }//GEN-LAST:event_downBtnActionPerformed
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+//Save the playlists to the arrays
+        String[] popArray = linkedList.getPopList().toArray(new String[0]);
+        String[] rapArray = linkedList.getRapList().toArray(new String[0]);
+
+        // Update the playlists array in your linkedList instance
+        linkedList.setPlaylists(new String[][]{popArray, rapArray});
+
+        // Display a message indicating that the playlist has been saved
+        JOptionPane.showMessageDialog(null, "Playlist saved successfully.");
+
+
+    }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,6 +465,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JLabel backgroundimg;
+    private javax.swing.JButton clearPlaylist;
     private javax.swing.JButton delBtn;
     private javax.swing.JButton deleteSearchBtn;
     private javax.swing.JButton displayPopBtn;
@@ -336,6 +476,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
     private javax.swing.JButton eraseRap;
     private javax.swing.JLabel genreLabel;
     private javax.swing.JTextField genretxt;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
@@ -343,6 +484,7 @@ public class MyMusicAppGUI extends javax.swing.JFrame {
     private javax.swing.JButton listBBtn;
     private javax.swing.JTextArea playlistTxt;
     private javax.swing.JButton repeatBtn;
+    private javax.swing.JButton saveBtn;
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField searchTxt;
     private javax.swing.JButton shufBtn;
